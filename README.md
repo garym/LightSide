@@ -1,5 +1,8 @@
 # WakeyWakey
-Wakey Wakey is intended to be a wake up light making use of BlinkyTape, inspired by James Singleton's [Pi Glowbe](https://github.com/jpsingleton/pi-glowbe) that I spotted in a copy of [MagPi](https://www.raspberrypi.org/magpi/) a few months ago.
+WakeyWakey is intended to be a wake up light making use of BlinkyTape, inspired by James Singleton's
+[Pi Glowbe](https://github.com/jpsingleton/pi-glowbe) that I spotted in a copy of 
+[MagPi](https://www.raspberrypi.org/magpi/) a few months ago. The naming is inspired by a line Mr Praline says in
+Monty Python's Dead Parrot sketch.
 
 ## Installation
 
