@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 #  Copyright 2016 Gary Martin
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");

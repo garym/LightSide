@@ -39,10 +39,16 @@ source code directory and install the prerequisites by:
 pip install -r requirements.txt
 ```
 
+and install WakeyWakey by running:
+
+```bash
+python setup.py install
+```
+
 You should now be able to run the python code like so:
 
 ```bash
-python wakeywakey.py wakeup
+wakeywakey wakeup
 ```
 
 At the moment, the program is only able to run a few preset light programs, with a few command line controls to specify
@@ -51,13 +57,13 @@ to use cron or a similar scheduler to specify when you want the alarm to run. Th
 complicated for those who require irregular sleep patterns but for the predictable, you should be able to specify cron 
 entries that will work for you for much of the time.
 
-To do this you will need to ensure you know the path to the `virtualenv`'s `python` binary:
+To do this you will need to ensure you know the path to the `wakeywakey` script that is installed into your virtualenv:
 
 ```bash
-type -P python
+type -P wakeywakey
 ```
 
-and use that in place of `/path/to/python`. You will also for the moment require the path to the wakeywakey.py script for the moment.
+and use that in place of `/path/to/wakeywakey`.
 
 To set up the cron:
 
@@ -69,12 +75,12 @@ then add an entry like:
 
 ```
 # turn off lights on reboot and just after midnight each night
-@reboot /path/to/python /path/to/wakeywakey.py off 2>&1 >/dev/null
-1 0 * * * /path/to/python /path/to/wakeywakey.py off 2>&1 >/dev/null
+@reboot /path/to/wakeywakey off 2>&1 >/dev/null
+1 0 * * * /path/to/wakeywakey off 2>&1 >/dev/null
 
 # weekdays sunrise starts at 07:15 and weekends at 09:00
-15 7 * * MON-FRI /path/to/python /path/to/wakeywakey.py wakeup 2>&1 >/dev/null
-0 9 * * SAT-SUN /path/to/python /path/to/wakeywakey.py wakeup 2>&1 >/dev/null
+15 7 * * MON-FRI /path/to/wakeywakey wakeup 2>&1 >/dev/null
+0 9 * * SAT-SUN /path/to/wakeywakey wakeup 2>&1 >/dev/null
 
 ```
 
