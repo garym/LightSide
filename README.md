@@ -1,5 +1,5 @@
-# WakeyWakey
-WakeyWakey is intended to be a wake up light making use of BlinkyTape, inspired by James Singleton's
+# LightSide
+LightSide is intended to be a wake up light making use of BlinkyTape, inspired by James Singleton's
 [Pi Glowbe](https://github.com/jpsingleton/pi-glowbe) that I spotted in a copy of 
 [MagPi](https://www.raspberrypi.org/magpi/) a few months ago. The naming is inspired by a line Mr Praline says in
 Monty Python's Dead Parrot sketch.
@@ -21,7 +21,7 @@ dependency problems before I know that this will work. The current code has ther
 Note also that I have not done any testing on Mac or Windows and so some assumptions and defaults may make it
 inappropriate for use on those systems. The main target is intended to be a Raspberry Pi running some flavour of linux.
 
-I also highly recommend the use of `virtualenv` to avoid the need to install WakeyWakey or any of its other
+I also highly recommend the use of `virtualenv` to avoid the need to install LightSide or any of its other
 dependencies with root. Although the documentation above makes mention of these, if you are using a linux distribution,
 it is probably worth installing `virtualenv` through your normal system package management rather than using the
 `pip install virtualenv` command that is suggested.
@@ -29,17 +29,17 @@ it is probably worth installing `virtualenv` through your normal system package 
 A command like
 
 ```bash
-virtualenv wakeyenv
+virtualenv lightsideenv
 ```
 
-will create a virtualenv that is already 'activated' and ready for installing code into. Change to the WakeyWakey
+will create a virtualenv that is already 'activated' and ready for installing code into. Change to the LightSide
 source code directory and install the prerequisites by:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-and install WakeyWakey by running:
+and install LightSide by running:
 
 ```bash
 python setup.py install
@@ -48,7 +48,7 @@ python setup.py install
 You should now be able to run the python code like so:
 
 ```bash
-wakeywakey wakeup
+lightside wakeup
 ```
 
 At the moment, the program is only able to run a few preset light programs, with a few command line controls to specify
@@ -57,13 +57,13 @@ to use cron or a similar scheduler to specify when you want the alarm to run. Th
 complicated for those who require irregular sleep patterns but for the predictable, you should be able to specify cron 
 entries that will work for you for much of the time.
 
-To do this you will need to ensure you know the path to the `wakeywakey` script that is installed into your virtualenv:
+To do this you will need to ensure you know the path to the `lightside` script that is installed into your virtualenv:
 
 ```bash
-type -P wakeywakey
+type -P lightside
 ```
 
-and use that in place of `/path/to/wakeywakey`.
+and use that in place of `/path/to/lightside`.
 
 To set up the cron:
 
@@ -75,19 +75,19 @@ then add an entry like:
 
 ```
 # turn off lights on reboot and just after midnight each night
-@reboot /path/to/wakeywakey off 2>&1 >/dev/null
-1 0 * * * /path/to/wakeywakey off 2>&1 >/dev/null
+@reboot /path/to/lightside off 2>&1 >/dev/null
+1 0 * * * /path/to/lightside off 2>&1 >/dev/null
 
 # weekdays sunrise starts at 07:15 and weekends at 09:00
-15 7 * * MON-FRI /path/to/wakeywakey wakeup 2>&1 >/dev/null
-0 9 * * SAT-SUN /path/to/wakeywakey wakeup 2>&1 >/dev/null
+15 7 * * MON-FRI /path/to/lightside wakeup 2>&1 >/dev/null
+0 9 * * SAT-SUN /path/to/lightside wakeup 2>&1 >/dev/null
 
 ```
 
 For further details of what you can do with cron, the [Wikipedia Cron entry](https://en.wikipedia.org/wiki/Cron) looks 
 reasonably good.
 
-For options available in `WakeyWakey`, you can run `--help` on the base command and subcommands. At the current time 
+For options available in `LightSide`, you can run `--help` on the base command and subcommands. At the current time 
 there are only two subcommands:
 
  - `off` is used to turn off the lights and exit.

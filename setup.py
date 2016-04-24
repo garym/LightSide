@@ -27,16 +27,16 @@ versions = (
 )
 
 setup(
-    name='WakeyWakey',
+    name='LightSide',
     version=versions[-1],
     description='A program to make wake-up lights with BlinkyTape',
     author='Gary Martin',
     author_email='gary.martin@physics.org',
-    url='https://github.com/garym/wakeywakey',
+    url='https://github.com/garym/LightSide',
     requires=requires,
-    py_modules=['wakeywakey'],
+    py_modules=['lightside'],
     entry_points="""
         [console_scripts]
-        wakeywakey = wakeywakey:main
+        lightside = lightside:main
     """,
 )
